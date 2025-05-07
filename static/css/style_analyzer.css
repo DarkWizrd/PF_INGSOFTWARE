@@ -1,0 +1,120 @@
+
+      body {
+        background: #f8f9fa;
+        font-family: 'Open Sans', sans-serif;
+        color: #2c3e50;
+      }
+      
+      .navbar-custom {
+        background: #2c3e50 !important;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 1rem 2rem;
+      }
+      
+      .navbar-brand {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #ffffff !important;
+      }
+      
+      .nav-link {
+        font-size: 1.2rem;
+        color: #ffffff !important;
+        margin-left: 1rem;
+        transition: color 0.3s ease;
+      }
+      
+      .nav-link:hover {
+        color: #3498db !important;
+      }
+      
+      .logout-btn {
+        font-size: 1.1rem;
+        background: #ffffff;
+        color: #2c3e50 !important;
+        padding: 0.3rem 0.8rem;
+        border-radius: 5px;
+        transition: background 0.3s ease;
+      }
+      
+      .logout-btn:hover {
+        background: #3498db;
+        color: #ffffff !important;
+      }
+      
+      .custom-card {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        background: #ffffff;
+        padding: 1.5rem;
+      }
+      
+      .custom-btn {
+        background: #3498db;
+        border: none;
+        border-radius: 8px;
+        padding: 0.75rem 1.5rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        transition: background 0.3s ease;
+      }
+      
+      .custom-btn:hover {
+        background: #2980b9;
+      }
+      
+      .custom-btn-crimson {
+        background: #c0392b;
+      }
+      
+      .custom-btn-crimson:hover {
+        background: #a93226;
+      }
+      
+      .custom-alert {
+        border-radius: 8px;
+        background: #e9ecef;
+        color: #2c3e50;
+        padding: 1rem;
+        margin: 0.5rem 0;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 1.5rem;
+      }
+      
+      .report-text {
+        font-size: 1.2rem;
+        margin: 0.5rem 0;
+      }
+      
+      .divider {
+        border-top: 1px solid #2c3e50;
+        margin: 2rem 0;
+      }
+      
+      .form-control {
+        border-radius: 6px;
+        border: 1px solid #ced4da;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+      }
+      
+      .form-label {
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+      
+      .navbar-toggler {
+        border: none;
+      }
+      
+      .alert h1 {
+        font-size: 1.5rem;
+        margin: 0;
+      }
+   
