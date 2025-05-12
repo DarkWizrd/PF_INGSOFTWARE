@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request
 import matplotlib.pyplot as plt
 import os
 import tweepy
+import math
 import csv
 import re
 from textblob import TextBlob
@@ -32,9 +33,7 @@ class SentimentAnalysis:
         # Creating variables to store sentiment info
         polarity = 0
         positive = 0
-        spositive = 0
         negative = 0
-        snegative = 0
         neutral = 0
         analysis =0
         sia = SentimentIntensityAnalyzer()
@@ -54,8 +53,6 @@ class SentimentAnalysis:
             user_fields=['profile_image_url'],
             expansions=['author_id']
         )
-        
-        
 
         # Open/create a file to append data to
         csvFile = open('result.csv', 'a')
@@ -73,16 +70,12 @@ class SentimentAnalysis:
                 polarity += compound
                 
                 # Categoriza el sentimiento (misma lógica de antes)
-                if -0.2 < compound <= 0.2:
+                if -0.1 < compound <= 0.1:
                     neutral += 1
-                elif 0.2 < compound <= 0.5:
+                elif 0.1 < compound <= 1:
                     positive += 1
-                elif 0.5 < compound <= 1:
-                    spositive += 1
-                elif -0.5 < compound <= -0.2:
+                elif -1 < compound <= -0.1:
                     negative += 1
-                elif -1 < compound <= -0.5:
-                    snegative += 1
 
         # Write to csv and close file
         csvWriter.writerow(self.tweetText)
@@ -90,27 +83,22 @@ class SentimentAnalysis:
         # Calculate percentages (using the actual number of tweets retrieved)
         actual_tweets = len(self.tweets.data) if self.tweets.data else 1
         positive = self.percentage(positive, actual_tweets)
-        spositive = self.percentage(spositive, actual_tweets)
         negative = self.percentage(negative, actual_tweets)
-        snegative = self.percentage(snegative, actual_tweets)
         neutral = self.percentage(neutral, actual_tweets)
 
         # Calculate average polarity
         polarity = polarity / actual_tweets if actual_tweets > 0 else 0
+        polarity ==math.trunc(polarity * 1000) / 1000
 
         # Determine overall sentiment for HTML display (same logic as before)
-        if -0.2 < polarity <= 0.2:
+        if -0.1 < polarity <= 0.1:
             htmlpolarity = "Neutral"
-        elif 0.2 < polarity <= 0.5:
+        elif 0.1 < polarity <= 1:
             htmlpolarity = "Positivo"
-        elif 0.5 < polarity <= 1:
-            htmlpolarity = "Altamente Positivo"
-        elif -0.5 < polarity <= -0.2:
+        elif -1 < polarity <= -0.1:
             htmlpolarity = "Negativo"
-        elif -1 < polarity <= -0.5:
-            htmlpolarity = "Altamente Negativo"
 
-        return polarity, htmlpolarity, positive, spositive, negative, snegative, neutral, keyword, actual_tweets
+        return polarity, htmlpolarity, positive, negative, neutral, keyword, actual_tweets
 
     # Resto de los métodos (cleanTweet, percentage, plotPieChart) permanecen igual
     def cleanTweet(self, tweet):
@@ -128,6 +116,6 @@ def sentiment_logic():
     bear=request.form.get('bear')
     sa = SentimentAnalysis()
     
-    polarity, htmlpolarity, positive,  spositive, negative,  snegative, neutral, keyword1, tweet1 = sa.DownloadData(
+    polarity, htmlpolarity, positive, negative, neutral, keyword1, tweet1 = sa.DownloadData(
         keyword, tweets, bear)
-    return render_template('sentiment_analyzer.html', polarity=polarity, htmlpolarity=htmlpolarity, positive=positive, spositive=spositive, negative=negative, snegative=snegative, neutral=neutral, keyword=keyword1, tweets=tweet1)
+    return render_template('sentiment_analyzer.html', polarity=polarity, htmlpolarity=htmlpolarity, positive=positive, negative=negative, neutral=neutral, keyword=keyword1, tweets=tweet1)

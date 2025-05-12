@@ -12,16 +12,16 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style_analyzer.css') }}" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></script>
-    
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap" rel="stylesheet" />
 
     <title>Inicio</title>
   </head>
   <body>
     <!-- Barra de navegación -->
-    
+
     <div class="container py-4">
       <div class="row justify-content-center">
         <div class="col-md-8">
@@ -42,7 +42,6 @@
                 </div>
                 <input type="submit" class="btn btn-primary custom-btn w-100" value="Buscar" />
               </form>
-           
             </div>
           </div>
         </div>
@@ -62,42 +61,34 @@
         <div class="col-md-10">
           <!-- Reporte de sentimiento general -->
           {% if polarity %}
-          <div class="mb-4">
-            <h1 class="section-title text-center">Reporte general</h1>
-            <div class="alert alert-primary custom-alert" role="alert">
-  
+            <div class="mb-4">
+              <h1 class="section-title text-center">Reporte general</h1>
+              <div class="alert alert-primary custom-alert" role="alert">
                 <h1 class="text-center">El sentimiento promedio es {{ htmlpolarity }}</h1>
-              
+              </div>
             </div>
-          </div>
           {% endif %}
           <!-- Fin del reporte general -->
           <!-- Inicio del valor de polaridad -->
           {% if polarity %}
-          <div class="mb-4">
-            <h1 class="section-title text-center">Polaridad del sentimiento</h1>
-            <div class="alert alert-primary custom-alert" role="alert">
-              
+            <div class="mb-4">
+              <h1 class="section-title text-center">Polaridad del sentimiento</h1>
+              <div class="alert alert-primary custom-alert" role="alert">
                 <h1 class="text-center">La polaridad del sentimiento es {{ polarity }}</h1>
-              
+              </div>
             </div>
-          </div>
           {% endif %}
           <!-- Fin del valor de polaridad -->
           <!-- Reporte detallado -->
           {% if polarity %}
-          <div class="mb-4">
-            <h1 class="section-title text-center">Reporte detallado</h1>
-            <div class="alert alert-primary custom-alert">
-             
-                <h2 class="report-text">{{ spositive }} % de los comentarios creen que es altamente positivo</h2>
+            <div class="mb-4">
+              <h1 class="section-title text-center">Reporte detallado</h1>
+              <div class="alert alert-primary custom-alert">
                 <h2 class="report-text">{{ positive }} % de los comentarios creen que es positivo</h2>
                 <h2 class="report-text">{{ neutral }} % de los comentarios creen que es neutral</h2>
                 <h2 class="report-text">{{ negative }} % de los comentarios creen que es negativo</h2>
-                <h2 class="report-text">{{ snegative }} % de los comentarios creen que es altamente negativo</h2>
-             
+              </div>
             </div>
-          </div>
           {% endif %}
         </div>
       </div>
