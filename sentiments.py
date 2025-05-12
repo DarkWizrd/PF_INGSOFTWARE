@@ -88,7 +88,6 @@ class SentimentAnalysis:
 
         # Calculate average polarity
         polarity = polarity / actual_tweets if actual_tweets > 0 else 0
-        polarity ==math.trunc(polarity * 1000) / 1000
 
         # Determine overall sentiment for HTML display (same logic as before)
         if -0.1 < polarity <= 0.1:
@@ -115,6 +114,7 @@ def sentiment_logic():
     tweets = request.form.get('tweets')
     bear=request.form.get('bear')
     sa = SentimentAnalysis()
+    polarity=polarity ==math.trunc(polarity * 1000) / 1000
     
     polarity, htmlpolarity, positive, negative, neutral, keyword1, tweet1 = sa.DownloadData(
         keyword, tweets, bear)
