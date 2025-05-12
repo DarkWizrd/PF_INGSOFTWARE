@@ -19,7 +19,7 @@ docutils==0.20.1
 exceptiongroup==1.2.2
 fastapi==0.110.3
 filelock==3.16.1
-Flask==3.0.3
+flask==3.0.3
 greenlet==3.1.1
 gunicorn==22.0.0
 h11==0.14.0
