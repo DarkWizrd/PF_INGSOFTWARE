@@ -6,13 +6,8 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 sentimientos=SentimentIntensityAnalyzer()
 
 data = {
-  "id": [1, 2, 3, 4, 5, 6],
-  "texto": ["no me gusta esa camisa",
-            "i hate fake news 😡",
-            "que horrible es esa persona",
-            "¡perfecto! :D",
-            "Recoge la diversión, Que viene con ternura.",
-            "i hate the fucking moty python"]
+  "id": [1],
+  "texto": ["Me encanto ese restaurante, la atención y la comida fue muy buena :D"]
 }
 
 df = pd.DataFrame(data)

@@ -54,6 +54,8 @@ class SentimentAnalysis:
             user_fields=['profile_image_url'],
             expansions=['author_id']
         )
+        
+        
 
         # Open/create a file to append data to
         csvFile = open('result.csv', 'a')
