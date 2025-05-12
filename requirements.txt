@@ -111,4 +111,3 @@ Werkzeug==3.0.6
 wrapt==1.17.2
 wsproto==1.2.0
 zipp==3.20.2
-flask==2.3.2
