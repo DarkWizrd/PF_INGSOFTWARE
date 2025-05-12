@@ -40,7 +40,7 @@
                   <label class="form-label">Ingresa el token bearer</label>
                   <input type="text" class="form-control" name="bear" />
                 </div>
-                <input type="submit" class="btn btn-primary custom-btn w-100" value="Search" />
+                <input type="submit" class="btn btn-primary custom-btn w-100" value="Buscar" />
               </form>
            
             </div>
@@ -61,38 +61,44 @@
       <div class="row justify-content-center">
         <div class="col-md-10">
           <!-- Reporte de sentimiento general -->
+          {% if polarity %}
           <div class="mb-4">
             <h1 class="section-title text-center">Reporte general</h1>
             <div class="alert alert-primary custom-alert" role="alert">
-              {% if polarity %}
+  
                 <h1 class="text-center">El sentimiento promedio es {{ htmlpolarity }}</h1>
-              {% endif %}
+              
             </div>
           </div>
+          {% endif %}
           <!-- Fin del reporte general -->
           <!-- Inicio del valor de polaridad -->
+          {% if polarity %}
           <div class="mb-4">
             <h1 class="section-title text-center">Polaridad del sentimiento</h1>
             <div class="alert alert-primary custom-alert" role="alert">
-              {% if polarity %}
+              
                 <h1 class="text-center">La polaridad del sentimiento es {{ polarity }}</h1>
-              {% endif %}
+              
             </div>
           </div>
+          {% endif %}
           <!-- Fin del valor de polaridad -->
           <!-- Reporte detallado -->
+          {% if polarity %}
           <div class="mb-4">
             <h1 class="section-title text-center">Reporte detallado</h1>
             <div class="alert alert-primary custom-alert">
-              {% if polarity %}
+             
                 <h2 class="report-text">{{ spositive }} % de los comentarios creen que es altamente positivo</h2>
                 <h2 class="report-text">{{ positive }} % de los comentarios creen que es positivo</h2>
                 <h2 class="report-text">{{ neutral }} % de los comentarios creen que es neutral</h2>
                 <h2 class="report-text">{{ negative }} % de los comentarios creen que es negativo</h2>
                 <h2 class="report-text">{{ snegative }} % de los comentarios creen que es altamente negativo</h2>
-              {% endif %}
+             
             </div>
           </div>
+          {% endif %}
         </div>
       </div>
     </div>
