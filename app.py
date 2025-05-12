@@ -9,4 +9,4 @@ def home():
     return render_template('home.html')  # Incluye return para renderer la plantilla
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=10000, debug=False)  # Debug=False, ahora esta en producción
