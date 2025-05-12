@@ -38,7 +38,7 @@ body {
 .btn-custom {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #333333;
+  background-color: ##C70039;
   color: #ffffff;
   font-size: 18px;
   text-decoration: none;
@@ -48,7 +48,7 @@ body {
   transition: background-color 0.3s, border-color 0.3s;
 }
 .btn-custom:hover {
-  background-color: #444444;
+  background-color: ##FF5733;
   border-color: #555555;
 }
 .tagesschrift-regular {
