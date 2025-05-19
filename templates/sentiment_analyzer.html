@@ -29,16 +29,16 @@
             <div class="card-body">
               <form method="post" action="sentiment_logic">
                 <div class="mb-3">
-                  <label class="form-label">Ingresa el término de búsqueda</label>
-                  <input type="text" class="form-control" name="keyword" />
+                  <label class="form-label" >Ingresa el término de búsqueda</label>
+                  <input type="text" class="form-control" name="keyword" required/>
                 </div>
                 <div class="mb-3">
                   <label class="form-label">¿Cuántos tweets quieres analizar?</label>
-                  <input type="number" class="form-control" name="tweets" />
+                  <input type="number" class="form-control" name="tweets" required/>
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Ingresa el token bearer</label>
-                  <input type="text" class="form-control" name="bear" />
+                  <input type="text" class="form-control" name="bear" required/>
                 </div>
                 <input type="submit" class="btn btn-primary custom-btn w-100" value="Buscar" />
               </form>
@@ -50,7 +50,10 @@
     <!-- Separador -->
     <div class="divider container"></div>
     <div class="container">
-      <!-- <a href="visualize" class="btn btn-primary custom-btn custom-btn-crimson d-block w-50 mx-auto mb-4">Generar gráfico</a> -->
+
+
+      
+      <!-- SALIDA DE LOS DATOS -->
       <div class="text-center">
         {% if polarity %}
           <h3 class="section-title">Esta es la reacción de los usuarios a: "{{ keyword }}" analizando "{{ tweets }}" tweets</h3>
